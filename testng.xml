@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="C:/Users/User/IdeaProjects/SeleneiumJune22">
+        <classes>
+            <class name="EX1.openDatJUnit">
+                <methods>
+                    <include name="opDM"/>
+                </methods>
+            </class>
+            <class name="EX1.testNGMethods">
+                <methods>
+                    <include name="c_SoftwareTesting"/>
+                    <include name="b_Selenium"/>
+                    <include name="a_JavaTraining"/>
+                    <include name="e_DataBaseTesting"/>
+                </methods>
+            </class>
+            <class name="tPkg.openDatJUnit">
+                <methods>
+                    <include name="opDM"/>
+                </methods>
+            </class>
+            <class name="tPkg.openDatTestNG">
+                <methods>
+                    <include name="opDM"/>
+                </methods>
+            </class>
+            <class name="tPkg.openGoogleJUnit">
+                <methods>
+                    <include name="opDM"/>
+                </methods>
+            </class>
+            <class name="tPkg.openGoogleTestNG">
+                <methods>
+                    <include name="opDM"/>
+                </methods>
+            </class>
+            <class name="tPkg.tesngFunctts2">
+                <methods>
+                    <include name="c_Method1"/>
+                    <include name="a_Method1"/>
+                </methods>
+            </class>
+            <class name="tPkg.testNGFuncts">
+                <methods>
+                    <include name="courseMethod1"/>
+                    <include name="courseMethod2"/>
+                    <include name="courseMethod3"/>
+                    <include name="courseMethod4"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
