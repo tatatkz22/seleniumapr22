@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="C:/Users/User/IdeaProjects/SeleneiumJune22/src/main/java/tPkg/openDatTestNG.java"
+<testsuite name="C:/Users/User/IdeaProjects/SeleneiumJune22/src/main/java/mainPackge/openDatTestNG.java"
            tests="1"
            failures="0"
            errors="0"
@@ -8,6 +8,6 @@
   <properties />
 
 
-      <testcase name="opDM" time="17,441" classname="tPkg.openDatTestNG" />
+      <testcase name="opDM" time="17,441" classname="mainPackge.openDatTestNG" />
 
 </testsuite>

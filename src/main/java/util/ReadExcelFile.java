@@ -18,8 +18,10 @@ public class ReadExcelFile{
             }
         }
         public String getData(int sheetnumber, int row, int column){
-            sheet = work_book.getSheetAt(sheetnumber);
-            String data = sheet.getRow(row).getCell(column).getStringCellValue();
+
+               sheet = work_book.getSheetAt(sheetnumber);
+               String data = sheet.getRow(row).getCell(column).getStringCellValue();
+
             return data;
         }
         public int getRowCount(int sheetIndex){

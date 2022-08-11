@@ -16,33 +16,33 @@
                     <include name="e_DataBaseTesting"/>
                 </methods>
             </class>
-            <class name="tPkg.openDatJUnit">
+            <class name="mainPackge.openDatJUnit">
                 <methods>
                     <include name="opDM"/>
                 </methods>
             </class>
-            <class name="tPkg.openDatTestNG">
+            <class name="mainPackge.openDatTestNG">
                 <methods>
                     <include name="opDM"/>
                 </methods>
             </class>
-            <class name="tPkg.openGoogleJUnit">
+            <class name="mainPackge.openGoogleJUnit">
                 <methods>
                     <include name="opDM"/>
                 </methods>
             </class>
-            <class name="tPkg.openGoogleTestNG">
+            <class name="mainPackge.openGoogleTestNG">
                 <methods>
                     <include name="opDM"/>
                 </methods>
             </class>
-            <class name="tPkg.tesngFunctts2">
+            <class name="mainPackge.tesngFunctts2">
                 <methods>
                     <include name="c_Method1"/>
                     <include name="a_Method1"/>
                 </methods>
             </class>
-            <class name="tPkg.testNGFuncts">
+            <class name="mainPackge.testNGFuncts">
                 <methods>
                     <include name="courseMethod1"/>
                     <include name="courseMethod2"/>

@@ -5,18 +5,18 @@
         <listener class-name="org.uncommons.reportng.HTMLReporter" />
         <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
     </listeners>
-    <test verbose="2" preserve-order="true" name="C:/Users/User/IdeaProjects/SeleneiumJune22/src/main/java/tPkg/openDatTestNG.java">
+    <test verbose="2" preserve-order="true" name="C:/Users/User/IdeaProjects/SeleneiumJune22/src/main/java/mainPackge/openDatTestNG.java">
         <classes>
-            <class name="tPkg.openDatTestNG">
+            <class name="mainPackge.openDatTestNG">
                 <methods>
                     <include name="opDM"/>
                 </methods>
             </class>
         </classes>
     </test>
-    <test verbose="2" preserve-order="true" name="C:/Users/User/IdeaProjects/SeleneiumJune22/src/main/java/tPkg/openGoogleTestNG.java">
+    <test verbose="2" preserve-order="true" name="C:/Users/User/IdeaProjects/SeleneiumJune22/src/main/java/mainPackge/openGoogleTestNG.java">
         <classes>
-            <class name="tPkg.openGoogleTestNG">
+            <class name="mainPackge.openGoogleTestNG">
                 <methods>
                     <include name="opDM"/>
                 </methods>

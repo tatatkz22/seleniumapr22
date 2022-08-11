@@ -1,4 +1,4 @@
-package tPkg;
+package mainPackge;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.qameta.allure.Epic;
@@ -8,14 +8,12 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 
 public class openGoogleTestNG {
@@ -32,7 +30,7 @@ public class openGoogleTestNG {
         driver = new ChromeDriver();
         baseurl = "https://google.com";
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+      /*  driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));*/
 
     }
 

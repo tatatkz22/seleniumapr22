@@ -1,4 +1,4 @@
-package tPkg;
+package mainPackge;
 
 import org.testng.annotations.Test;
 

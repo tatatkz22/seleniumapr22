@@ -1,4 +1,4 @@
-package tPkg;
+package mainPackge;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.qameta.allure.Epic;
@@ -28,7 +28,7 @@ public class popoAlerts {
         driver = new ChromeDriver();
         baseurl = "http://the-internet.herokuapp.com";
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+       /* driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));*/
 
     }
 

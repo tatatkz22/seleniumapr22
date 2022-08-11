@@ -57,8 +57,24 @@ public class regPageElements {
         return element;
     }
 
+    //elements for https://demosite.executeautomation.com/Login.html
 
+    public static WebElement txtUsername(WebDriver driver){
 
+        element =  driver.findElement(By.name("UserName"));
+        return element;
+    }
 
+    public static WebElement txtPassword(WebDriver driver){
+
+        element =  driver.findElement(By.name("Password"));
+        return element;
+    }
+
+    public static WebElement txtLoginButton(WebDriver driver){
+
+        element =  driver.findElement(By.xpath("//*[@id='userName']/p[3]/input"));
+        return element;
+    }
 
 }

@@ -1,7 +1,6 @@
-package tPkg;
+package mainPackge;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.apache.hc.core5.util.Timeout;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

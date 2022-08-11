@@ -1,10 +1,9 @@
-package tPkg;
+package mainPackge;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.Assert;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
@@ -21,44 +20,48 @@ public class ddtExcel {
     public void setup() throws InterruptedException {
 
         WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
+        ChromeOptions option = new ChromeOptions();
+        option.setHeadless(true);
+        driver = new ChromeDriver(option);
+
+
         baseurl = "https://datamateinc.com/registration";
         driver.manage().window().maximize();
 
-        Thread.sleep(3000);
+
 
     }
 
         @Test(dataProvider = "testdata")
-        public void demoClass(String delName, String delLastName) throws InterruptedException {
+        public void delegatesDemo(String delName, String delLastName) throws InterruptedException {
 
             driver.get(baseurl);
-            Thread.sleep(2000);
+
             forms.regPageElements.txtDelegateName(driver).clear();
             forms.regPageElements.txtDelegateLast(driver).clear();
-            Thread.sleep(1000);
+
 
             forms.regPageElements.txtDelegateName(driver).sendKeys(delName);
             forms.regPageElements.txtDelegateLast(driver).sendKeys(delLastName);
-            Thread.sleep(3000);
 
-            Assert.assertTrue(driver.getTitle().matches("Datamate Registration Form | Offering the Best Selenium Training Course in SA"), "Missing Paramater");
-            System.out.println("Login successful");
+
+           System.out.println("Delegate Registered Successfully");
         }
         @AfterMethod
-        void ProgramTermination () {
-            driver.quit();
+        public void teardown () {
+
+        driver.quit();
         }
         @DataProvider(name = "testdata")
         public Object[][] testDataExample() {
-            ReadExcelFile configuration = new ReadExcelFile("src/main/resources/usernames.xlsx");
+            ReadExcelFile configuration = new ReadExcelFile("src/main/resources/delegates.xlsx");
             int rows = configuration.getRowCount(0);
-            Object[][] signin_credentials = new Object[rows][2];
+            Object[][] delegate_Details = new Object[rows][2];
 
             for (int i = 0; i < rows; i++) {
-                signin_credentials[i][0] = configuration.getData(0, i, 0);
-                signin_credentials[i][1] = configuration.getData(0, i, 1);
+                delegate_Details[i][0] = configuration.getData(0, i, 0);
+                delegate_Details[i][1] = configuration.getData(0, i, 1);
             }
-            return signin_credentials;
+            return delegate_Details;
         }
     }

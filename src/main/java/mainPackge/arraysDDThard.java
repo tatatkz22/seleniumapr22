@@ -1,12 +1,19 @@
-package tPkg;
+package mainPackge;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
+import java.io.File;
+import java.io.IOException;
 
 public class arraysDDThard {
     private String baseurl;
@@ -26,7 +33,7 @@ public class arraysDDThard {
 
     }
 
-@DataProvider(name ="Delegates")
+@DataProvider
     public Object[][] DelegatesDetails(){
 
          Object [][] DelePersonaInf = new Object[4][2];
@@ -44,14 +51,14 @@ public class arraysDDThard {
 
 
          DelePersonaInf[3][0] ="Tim";
-         DelePersonaInf[3][1] ="Tim1";
+         DelePersonaInf[3][0] ="Tim1";
 
     return DelePersonaInf;
 
 }
 
 
-@Test(dataProvider ="Delegates")
+@Test(dataProvider ="DelegatesDetails")
     public void delegRegistraForm(String delName, String delLastName) throws InterruptedException {
     driver.get(baseurl);
         Thread.sleep(2000);
@@ -67,7 +74,26 @@ public class arraysDDThard {
 
 
     @AfterMethod
-    public void closeBrowser() {
+    public void closeBrowser(ITestResult result) throws IOException {
+
+
+        //takes a screenshot for a failure, creates a directory first
+        if (result.getStatus() == ITestResult.FAILURE ){
+            TakesScreenshot ts = (TakesScreenshot)driver;
+            File srcFile = ts.getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(srcFile, new File("./ScreenShots/"+ System.currentTimeMillis()+".png"));
+
+
+        }
+
+        else
+        //takes a screenshot for a pass, creates a directory first.
+        {
+            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            String currentDir = System.getProperty("user.dir");
+            FileUtils.copyFile(scrFile, new File(currentDir + "\\TestResults\\" + System.currentTimeMillis() + ".png"));
+
+        }
 
         driver.close();
 
